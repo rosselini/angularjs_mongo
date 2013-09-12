@@ -1,0 +1,1 @@
+define("module/module-one",[],function(){function e(){console.log("Module one")}return e}),define("module/module-two",[],function(){function e(){console.log("Module two")}return e}),require(["module/module-one","module/module-two"],function(e,t){var e=new e,t=new t;e.consoleOne,t.cinsoleTwo}),define("app",function(){});

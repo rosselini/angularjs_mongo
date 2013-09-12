@@ -1,0 +1,43 @@
+<div class="row-fluid show-grid">
+	<div class="span12"> 
+    	<form class="form-search"> <!-- Search first name -->
+  			<div class="input-append">
+    			<input type="text" data-ng-model="filter.firstName" class="span4 search-query">
+    			<button type="submit" class="btn">Search first name</button>
+  			</div>
+
+  			<div class="input-append"> <!-- Search last name -->
+    			<input type="text" data-ng-model="filter.lastName" class="span4 search-query">
+    			<button type="submit" class="btn">Search last name</button>
+  			</div>
+
+  			<div class="input-append"> <!-- Search phone -->
+    			<input type="text" data-ng-model="filter.phone" class="span4 search-query">
+    			<button type="submit" class="btn">Search phone</button>
+  			</div>
+
+  			<a ng-href="#/contact/add" class="btn btn-small">Add new user</a>
+		</form>
+    </div>
+</div>
+
+<table class="table table-condensed">
+ <thead>
+ 	<tr>
+ 		<th>First name</th>
+ 		<th>Last name</th>
+ 		<th>Phone</th>
+ 		<th>Address</th>
+ 		<th></th>
+ 	</tr>
+ </thead>
+ <tbody>
+ 	<tr ng-repeat="contact in listContacts | filter:filter.phone | filter:filter.firstName | filter:filter.lastName">
+ 		<td>{{contact.name.first}}</td>
+ 		<td>{{contact.name.last}}</td>
+ 		<td>{{contact.phone}}</td>
+ 		<td>{{contact.address}}</td>
+ 		<td><a ng-href="#/contact/{{contact._id}}/view" class="btn btn-small">Show</a></td>
+ 	</tr>
+ </tbody>
+</table>

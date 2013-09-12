@@ -1,0 +1,9 @@
+{
+	"name": "RequireJS",
+	"version": "1.0.0",
+	"dependencies": {
+		"requirejs": null,
+		"angular": null,
+		"underscore": null
+	}
+}
